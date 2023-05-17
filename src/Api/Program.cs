@@ -9,9 +9,10 @@ var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults()
     .ConfigureServices(services =>
     {
-        services.AddDbContext<AppDbContext>(options =>
+        services.AddScoped<AppDbContext>(svr =>
         {
-            options.UseSqlite("Data Source=database.sqlite");
+            var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite("Data Source=database.sqlite");
+            return new AppDbContext(options.Options);
         });
 
         services.AddScoped<IBlogRepository, BlogRepository>();
