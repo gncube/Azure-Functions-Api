@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-//var home = Environment.GetEnvironmentVariable("HOME") ?? "";
-//var databasePath = Path.Combine(home, "database.sqlite");
+var home = Environment.GetEnvironmentVariable("HOME") ?? "";
+var databasePath = Path.Combine(home, "database.sqlite");
 
 var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults()
@@ -14,8 +14,7 @@ var host = new HostBuilder()
     {
         services.AddScoped<AppDbContext>(svr =>
         {
-            //var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite($"Data Source={databasePath}");
-            var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite($"Data Source=database.sqlite");
+            var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite($"Data Source={databasePath}");
             return new AppDbContext(options.Options);
         });
 
