@@ -7,10 +7,11 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
     public AppDbContext CreateDbContext(string[] args)
     {
-        var home = Environment.GetEnvironmentVariable("HOME") ?? "";
-        var databasePath = Path.Combine(home, "database.sqlite");
+        //var home = Environment.GetEnvironmentVariable("HOME") ?? "";
+        //var databasePath = Path.Combine(home, "database.sqlite");
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseSqlite($"Data Source={databasePath}");
+        //optionsBuilder.UseSqlite($"Data Source={databasePath}");
+        optionsBuilder.UseSqlite($"Data Source=database.sqlite");
         return new AppDbContext(optionsBuilder.Options);
     }
 }
