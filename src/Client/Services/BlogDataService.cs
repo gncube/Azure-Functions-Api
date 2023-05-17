@@ -13,6 +13,7 @@ public class BlogDataService : IBlogDataService
     }
     public async Task<IEnumerable<Blog>> GetAllBlogsAsync(bool refreshRequired = false)
     {
+        var baseUrl = _httpClient.BaseAddress;
         using var responseStream = await _httpClient.GetStreamAsync($"api/blogs");
         using var jsonDoc = await JsonDocument.ParseAsync(responseStream);
 
