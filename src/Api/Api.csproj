@@ -19,6 +19,9 @@
     <ProjectReference Include="..\GSN.Infrastructure\GSN.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="database.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
