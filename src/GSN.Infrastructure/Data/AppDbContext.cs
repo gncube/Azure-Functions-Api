@@ -7,10 +7,45 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     public DbSet<Blog> Blogs => Set<Blog>();
     public DbSet<Post> Posts => Set<Post>();
+    public DbSet<WeatherForecast> WeatherForecasts => Set<WeatherForecast>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Blog>(entity => { entity.Property(e => e.BlogName).IsRequired(); });
+
+        #region WeatherForecastSeed
+        modelBuilder.Entity<WeatherForecast>().HasData(
+           new WeatherForecast
+           {
+               Id = Guid.NewGuid().ToString(),
+               Date = DateOnly.FromDateTime(DateTime.UtcNow),
+               TemperatureC = 20,
+               Summary = "Sunny"
+           },
+           new WeatherForecast
+           {
+               Id = Guid.NewGuid().ToString(),
+               Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)),
+               TemperatureC = 22,
+               Summary = "Partly Cloudy"
+           },
+           new WeatherForecast
+           {
+               Id = Guid.NewGuid().ToString(),
+               Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(2)),
+               TemperatureC = 20,
+               Summary = "Sunny Cloudy"
+           },
+           // Add more WeatherForecast instances here...
+           new WeatherForecast
+           {
+               Id = Guid.NewGuid().ToString(),
+               Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(5)),
+               TemperatureC = 25,
+               Summary = "Rainy"
+           }
+       );
+        #endregion
 
         #region BlogSeed
         modelBuilder.Entity<Blog>().HasData(new Blog { Id = "5b1c2b4d-48c7-402a-80c3-cc796ad49c6b", BlogName = "First Seeded Blog", CreatedOnDate = DateTime.UtcNow, Published = true });
