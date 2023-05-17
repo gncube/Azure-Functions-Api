@@ -20,4 +20,9 @@
     <ProjectReference Include="..\GSN.Domain\GSN.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Factories\" />
+  </ItemGroup>
+
 </Project>
