@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSN.Application", "src\GSN.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSN.Infrastructure", "src\GSN.Infrastructure\GSN.Infrastructure.csproj", "{1C17C71F-73F2-4E04-914C-5BA147141DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\Client\Client.csproj", "{0656929C-C256-4E8B-AC9A-35408F131525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1C17C71F-73F2-4E04-914C-5BA147141DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C17C71F-73F2-4E04-914C-5BA147141DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C17C71F-73F2-4E04-914C-5BA147141DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0656929C-C256-4E8B-AC9A-35408F131525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0656929C-C256-4E8B-AC9A-35408F131525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0656929C-C256-4E8B-AC9A-35408F131525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0656929C-C256-4E8B-AC9A-35408F131525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
